@@ -2,6 +2,6 @@
 ^\.Rproj\.user$
 ^CODE_OF_CONDUCT.md$
 ^README.Rmd$
-.githhub
+.github
 Makefile
 
