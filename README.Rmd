@@ -28,6 +28,8 @@ library('func')
 
 ## usage
 
+- `func_load()`: load default parameter values for a function or vector/list of functions
+
 ```{r}
 mars <- function() 5
 venus <- function(z = mars(), m = list(goo = "bar"), v = function(e) e) {
@@ -42,6 +44,16 @@ func_load(venus)
 class(z); z
 class(m); m
 class(v); v
+```
+
+- `func_load_path()`: same as `func_load()`, but for functions in a file
+
+```{r}
+tmpf <- tempfile(fileext=".R")
+cat("myfunc <- function() 2\nfun <- function(bar = 5, zzz = myfunc()) bar + 1\n", file=tmpf)
+func_load_path(path=tmpf)
+bar
+zzz
 ```
 
 

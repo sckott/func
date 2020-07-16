@@ -23,6 +23,8 @@ library('func')
 
 ## usage
 
+- `func_load()`: load default parameter values for a function or vector/list of functions
+
 
 ```r
 mars <- function() 5
@@ -40,7 +42,7 @@ venus()
 #> 
 #> [[3]]
 #> function(e) e
-#> <environment: 0x7fcd7bd862d8>
+#> <environment: 0x7f98b10b9988>
 z
 #> Error in eval(expr, envir, enclos): object 'z' not found
 m
@@ -58,7 +60,20 @@ class(m); m
 class(v); v
 #> [1] "function"
 #> function(e) e
-#> <environment: 0x7fcd7c991328>
+#> <environment: 0x7f98b367bdc8>
+```
+
+- `func_load_path()`: same as `func_load()`, but for functions in a file
+
+
+```r
+tmpf <- tempfile(fileext=".R")
+cat("myfunc <- function() 2\nfun <- function(bar = 5, zzz = myfunc()) bar + 1\n", file=tmpf)
+func_load_path(path=tmpf)
+bar
+#> [1] 5
+zzz
+#> [1] 2
 ```
 
 
