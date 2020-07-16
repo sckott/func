@@ -3,7 +3,7 @@ func
 
 
 
-[![R-CMD-check](https://github.com/sckott/func/workflows/R-CMD-check/badge.svg)](https://github.com/sckott/func/actions/)
+[![R-check](https://github.com/sckott/func/workflows/R-check/badge.svg)](https://github.com/sckott/func/actions/)
 
 
 `func` - tools for function development
