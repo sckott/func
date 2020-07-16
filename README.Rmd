@@ -26,6 +26,25 @@ remotes::install_github("sckott/func")
 library('func')
 ```
 
+## usage
+
+```{r}
+mars <- function() 5
+venus <- function(z = mars(), m = list(goo = "bar"), v = function(e) e) {
+  list(z, z, v)
+}
+mars()
+venus()
+z
+m
+v
+func_load(venus)
+class(z); z
+class(m); m
+class(v); v
+```
+
+
 ## Meta
 
 * Please [report any issues or bugs](https://github.com/sckott/func/issues).

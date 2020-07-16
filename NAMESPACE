@@ -2,3 +2,4 @@
 
 export(func_load)
 export(func_load_path)
+importFrom(rlang,eval_tidy)

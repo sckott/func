@@ -4,13 +4,19 @@
 \alias{func_load}
 \title{Load default parameter values}
 \usage{
-func_load(fun, envir = globalenv())
+func_load(fun, envir = globalenv(), eval = TRUE)
 }
 \arguments{
-\item{fun}{Function object, not character name of function}
+\item{fun}{(function) Function object, not character name of function.
+required}
 
 \item{envir}{Environment to load default parameters in to.
-Default: `globalenv()`}
+Default: `globalenv()`. required}
+
+\item{eval}{(logical) evaluate `call`s?. default: `TRUE`. If `TRUE`, 
+any parameter values that have class `call` will be run through
+`rlang::eval_tidy()`. For example: lists, anonymous functions, function
+calls themselves. required}
 }
 \description{
 For a function or list of functions
@@ -27,5 +33,25 @@ foo <- function(w=5, y=4) w+y
 bar <- function(a="a", b="b") c(a,b)
 func_load(c(foo, bar))
 w; y; a; b
+
+# function with a function as a default parameter
+mars <- function() 5
+venus <- function(z = mars(), m = list(goo = "bar"), v = function(e) e) {
+  list(z, z, v)
+}
+mars()
+venus()
+z
+m
+v
+func_load(venus)
+class(z); z
+class(m); m
+class(v); v
+## eval=TRUE
+func_load(venus, eval=TRUE)
+class(z); z
+class(m); m
+class(v); v
 }
 }

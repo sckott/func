@@ -7,3 +7,5 @@ Author: Scott Chamberlain
 Maintainer: Scott Chamberlain <myrmecocystus@gmail.com>
 Encoding: UTF-8
 RoxygenNote: 7.1.1
+Imports:
+  rlang

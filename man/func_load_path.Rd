@@ -4,14 +4,18 @@
 \alias{func_load_path}
 \title{Load default parameter values}
 \usage{
-func_load_path(path, envir = globalenv())
+func_load_path(path, envir = globalenv(), eval = TRUE)
 }
 \arguments{
-\item{path}{Path to a file with one or more functions.
-required}
+\item{path}{Path to a file with one or more functions. required}
 
 \item{envir}{Environment to load default parameters in to.
-Default: .GlobalEnv}
+Default: `globalenv()`. required}
+
+\item{eval}{(logical) evaluate `call`s?. default: `TRUE`. If `TRUE`, 
+any parameter values that have class `call` will be run through
+`rlang::eval_tidy()`. For example: lists, anonymous functions, function
+calls themselves. required}
 }
 \description{
 For function(s) in a file
