@@ -1,0 +1,9 @@
+Package: func
+Title: Tools for Function Development
+Description: Tools for function development.
+Version: 0.0.1.91
+License: MIT + file LICENSE
+Author: Scott Chamberlain
+Maintainer: Scott Chamberlain <myrmecocystus@gmail.com>
+Encoding: UTF-8
+RoxygenNote: 7.1.1
