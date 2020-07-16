@@ -13,19 +13,19 @@ func_load(fun, envir = globalenv())
 Default: `globalenv()`}
 }
 \description{
-Of a function or list of functions
+For a function or list of functions
 }
 \examples{
 \dontrun{
-# A single function
-foo <- function(x=5, y=4) x+y
+# one function
+foo <- function(w=5, y=4) w+y
 func_load(foo)
-x; y
+w; y
 
-# Many functions
-foo <- function(x=5, y=4) x+y
+# many functions
+foo <- function(w=5, y=4) w+y
 bar <- function(a="a", b="b") c(a,b)
 func_load(c(foo, bar))
-x; y; a; b
+w; y; a; b
 }
 }

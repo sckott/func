@@ -1,6 +1,6 @@
 #' Load default parameter values 
 #' 
-#' From a file
+#' For function(s) in a file
 #'
 #' @export
 #' @param path Path to a file with one or more functions.

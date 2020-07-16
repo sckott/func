@@ -14,7 +14,7 @@ required}
 Default: .GlobalEnv}
 }
 \description{
-From a file
+For function(s) in a file
 }
 \examples{
 \dontrun{
