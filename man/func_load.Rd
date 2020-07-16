@@ -48,8 +48,9 @@ func_load(venus)
 class(z); z
 class(m); m
 class(v); v
-## eval=TRUE
-func_load(venus, eval=TRUE)
+
+## eval=FALSE
+func_load(venus, eval=FALSE)
 class(z); z
 class(m); m
 class(v); v
