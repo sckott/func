@@ -58,6 +58,7 @@ each_fun <- function(x, envir, eval) {
   argslist <- as.list(x, all=TRUE)
   args <- pop(argslist)
   for (i in seq_along(args)) {
+    if (is.name(args[[i]])) next
     z <- if (eval && is.call(args[[i]])) rlang::eval_tidy(args[[i]]) else args[[i]]
     assign(names(args[i]), z, envir=envir)
   }

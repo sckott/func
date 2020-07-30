@@ -23,8 +23,9 @@ For function(s) in a file
 \examples{
 \dontrun{
 tmpf <- tempfile(fileext=".R")
-cat("fun <- function(bar = 5) bar + 1\n", file=tmpf)
+cat("fun <- function(bar = 5, foo = function() x, ...) bar + 1\n", file=tmpf)
 func_load_path(path=tmpf)
 bar
+foo
 }
 }
