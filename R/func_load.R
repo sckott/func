@@ -63,6 +63,3 @@ each_fun <- function(x, envir, eval) {
     assign(names(args[i]), z, envir=envir)
   }
 }
-
-# drop last element of list or vector
-pop <- function(x) x[-length(x)]

@@ -6,3 +6,6 @@ assert <- function(x, y) {
     }
   }
 }
+
+# drop last element of list or vector
+pop <- function(x) x[-length(x)]
