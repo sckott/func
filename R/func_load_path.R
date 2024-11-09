@@ -5,13 +5,12 @@
 #' @export
 #' @param path Path to a file with one or more functions. required
 #' @inheritParams func_load
-#' @examples \dontrun{
+#' @examples
 #' tmpf <- tempfile(fileext=".R")
 #' cat("fun <- function(bar = 5, foo = function() x, ...) bar + 1\n", file=tmpf)
 #' func_load_path(path=tmpf)
 #' bar
 #' foo
-#' }
 func_load_path <- function(path, envir=globalenv(), eval=TRUE) {
   tempenv <- new.env()
   source(path, local=tempenv)

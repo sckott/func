@@ -11,7 +11,7 @@
 #' any parameter values that have class `call` will be run through
 #' `rlang::eval_tidy()`. For example: lists, anonymous functions, function
 #' calls themselves. required
-#' @examples \dontrun{
+#' @examples
 #' # one function
 #' foo <- function(w=5, y=4) w+y
 #' func_load(foo)
@@ -30,9 +30,10 @@
 #' }
 #' mars()
 #' venus()
-#' z
-#' m
-#' v
+#' # z
+#' # m
+#' # v
+#' \dontrun{
 #' func_load(venus)
 #' class(z); z
 #' class(m); m

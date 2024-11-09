@@ -2,13 +2,10 @@
 % Please edit documentation in R/func-package.R
 \docType{package}
 \name{func-package}
-\alias{func-package}
 \alias{func}
-\title{func}
+\alias{func-package}
+\title{func: Tools for Function Development}
 \description{
-Tools for function development
+Tools for function development.
 }
-\author{
-Scott Chamberlain
-}
-\keyword{package}
+\keyword{internal}

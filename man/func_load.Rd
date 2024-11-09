@@ -22,7 +22,6 @@ calls themselves. required}
 For a function or list of functions
 }
 \examples{
-\dontrun{
 # one function
 foo <- function(w=5, y=4) w+y
 func_load(foo)
@@ -41,9 +40,10 @@ venus <- function(z = mars(), m = list(goo = "bar"), v = function(e) e) {
 }
 mars()
 venus()
-z
-m
-v
+# z
+# m
+# v
+\dontrun{
 func_load(venus)
 class(z); z
 class(m); m
