@@ -8,4 +8,11 @@
 \description{
 Tools for function development.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://sckott.github.io/func/}
+}
+
+}
 \keyword{internal}

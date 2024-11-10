@@ -11,13 +11,13 @@ func
 ## Installation
 
 
-```r
-install.packages("remotes")
-remotes::install_github("sckott/func")
+``` r
+# install.packages("pak")
+pak::pak("sckott/func")
 ```
 
 
-```r
+``` r
 library('func')
 ```
 
@@ -26,7 +26,7 @@ library('func')
 - `func_load()`: load default parameter values for a function or vector/list of functions
 
 
-```r
+``` r
 mars <- function() 5
 venus <- function(z = mars(), m = list(goo = "bar"), v = function(e) e) {
   list(z, z, v)
@@ -41,14 +41,15 @@ venus()
 #> [1] 5
 #> 
 #> [[3]]
-#> function(e) e
-#> <environment: 0x7f98b10b9988>
+#> function (e) 
+#> e
+#> <environment: 0x12d80ddb8>
 z
-#> Error in eval(expr, envir, enclos): object 'z' not found
+#> Error: object 'z' not found
 m
-#> Error in eval(expr, envir, enclos): object 'm' not found
+#> Error: object 'm' not found
 v
-#> Error in eval(expr, envir, enclos): object 'v' not found
+#> Error: object 'v' not found
 func_load(venus)
 class(z); z
 #> [1] "numeric"
@@ -59,14 +60,15 @@ class(m); m
 #> [1] "bar"
 class(v); v
 #> [1] "function"
-#> function(e) e
-#> <environment: 0x7f98b367bdc8>
+#> function (e) 
+#> e
+#> <environment: 0x12d95ce78>
 ```
 
 - `func_load_path()`: same as `func_load()`, but for functions in a file
 
 
-```r
+``` r
 tmpf <- tempfile(fileext=".R")
 cat("myfunc <- function() 2\nfun <- function(bar = 5, zzz = myfunc()) bar + 1\n", file=tmpf)
 func_load_path(path=tmpf)

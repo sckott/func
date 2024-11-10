@@ -18,8 +18,8 @@ knitr::opts_chunk$set(
 ## Installation
 
 ```{r eval=FALSE}
-install.packages("remotes")
-remotes::install_github("sckott/func")
+# install.packages("pak")
+pak::pak("sckott/func")
 ```
 
 ```{r}
